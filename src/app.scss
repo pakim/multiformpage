@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  width: 950px;
+  height: 600px;
+  padding: 15px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 15px -10px rgba(0, 0, 0, 0.2);
+
+  .sidebar {
+    background: url("./assets/images/bg-sidebar-desktop.svg") center / cover no-repeat;
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 275px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .step {
+      display: flex;
+      gap: 20px;
+      color: hsl(0, 0%, 100%);
+      text-transform: uppercase;
+      cursor: pointer;
+
+      .step-number {
+        font-weight: 500;
+        border: 1px solid hsl(0, 0%, 100%);
+        border-radius: 50%;
+        width: 34px;
+        height: 34px;
+        padding-top: 5px;
+        text-align: center;
+
+        &.active {
+          color: hsl(213, 96%, 18%);
+          background-color: hsl(206, 94%, 87%);
+        }
+      }
+
+      .step-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .name {
+          font-size: 13px;
+          color: hsl(231, 11%, 63%);
+        }
+
+        .title {
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+
+  .forms {
+  }
+}
