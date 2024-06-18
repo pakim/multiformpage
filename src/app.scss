@@ -115,9 +115,20 @@
             outline: none;
           }
 
-          label {
-            color: hsl(213, 96%, 18%);
-            font-size: 15px;
+          .labels {
+            display: flex;
+            justify-content: space-between;
+
+            label {
+              color: hsl(213, 96%, 18%);
+              font-size: 15px;
+            }
+
+            .error {
+              font-size: 15px;
+              color: hsl(354, 84%, 57%);
+              font-weight: 500;
+            }
           }
         }
       }

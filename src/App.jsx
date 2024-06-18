@@ -5,14 +5,20 @@ import Info from "./components/Info";
 
 function App() {
   const [step, setStep] = useState(1);
+  const [infoCompleted, setInfoCompleted] = useState(true);
+  const [info, setInfo] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
 
   return (
     <div className="container">
       <div className="sidebar">
-        <Step number={1} title="Your info" step={step} setStep={setStep} />
-        <Step number={2} title="Select plan" step={step} setStep={setStep} />
-        <Step number={3} title="Add-ons" step={step} setStep={setStep} />
-        <Step number={4} title="Summary" step={step} setStep={setStep} />
+        <Step number={1} title="Your info" step={step} setStep={setStep} completed={infoCompleted} />
+        <Step number={2} title="Select plan" step={step} setStep={setStep} completed={infoCompleted} />
+        <Step number={3} title="Add-ons" step={step} setStep={setStep} completed={infoCompleted} />
+        <Step number={4} title="Summary" step={step} setStep={setStep} completed={infoCompleted} />
         <div
           className={
             step === 1
@@ -26,7 +32,7 @@ function App() {
         ></div>
       </div>
       <div className="forms">
-        <Info step={step} />
+        <Info step={step} info={info} setInfo={setInfo} />
       </div>
     </div>
   );
