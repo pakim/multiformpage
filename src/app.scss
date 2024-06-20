@@ -81,12 +81,17 @@
 
   .forms {
     flex: 1;
-    padding: 40px 90px 20px;
+    padding: 40px 100px 20px;
     overflow: hidden;
+    position: relative;
 
     .form {
-      height: 100%;
       transition: all 0.25s linear;
+      position: absolute;
+      top: 40px;
+      bottom: 20px;
+      left: 100px;
+      right: 100px;
 
       h1 {
         color: hsl(213, 96%, 18%);
@@ -94,6 +99,7 @@
       }
 
       p {
+        font-size: 16px;
         color: hsl(231, 11%, 63%);
         margin-bottom: 35px;
       }
@@ -113,6 +119,10 @@
             border: 1px solid hsl(229, 24%, 87%);
             border-radius: 10px;
             outline: none;
+
+            &.error {
+              border: 1px solid hsl(354, 84%, 57%);
+            }
           }
 
           .labels {
@@ -133,6 +143,58 @@
         }
       }
 
+      &.plan {
+        form {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .plans {
+            display: flex;
+            justify-content: space-between;
+
+            .plan-container {
+              width: 140px;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: flex-start;
+              border: 1px solid hsl(231, 11%, 63%);
+              border-radius: 10px;
+              padding: 20px;
+
+              img {
+                margin-bottom: 50px;
+              }
+
+              .plan-info {
+                display: flex;
+                flex-direction: column;
+              }
+            }
+          }
+        }
+      }
+
+      &.addon {
+        form {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+
+      &.summary {
+        form {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+
       &.prev {
         opacity: 0;
         transform: translateY(-100%);
@@ -146,13 +208,13 @@
 
     .button-container {
       display: flex;
-      justify-content: flex-end;
 
       .buttons {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-direction: row-reverse;
         font-size: 16px;
         font-weight: 700;
 
@@ -167,6 +229,16 @@
         .next {
           font-size: 17px;
           background-color: hsl(213, 96%, 18%);
+          padding: 15px 30px;
+          color: hsl(0, 0%, 100%);
+          border-radius: 8px;
+          border: none;
+          cursor: pointer;
+        }
+
+        .confirm {
+          font-size: 17px;
+          background-color: hsl(243, 100%, 62%);
           padding: 15px 30px;
           color: hsl(0, 0%, 100%);
           border-radius: 8px;

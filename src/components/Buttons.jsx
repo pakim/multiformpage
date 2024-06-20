@@ -1,12 +1,25 @@
-const Buttons = ({ step }) => {
+const Buttons = ({ step, setStep }) => {
+  const handleBack = e => {
+    e.preventDefault();
+    setStep(step - 1);
+  };
+
   return (
     <div className="button-container">
       <div className="buttons">
-        {step !== 1 && <button className="back">Go Back</button>}
         {step !== 4 ? (
-          <button className="next">Next Step</button>
+          <button type="submit" className="next">
+            Next Step
+          </button>
         ) : (
-          <button className="confirm">Confirm</button>
+          <button type="submit" className="confirm">
+            Confirm
+          </button>
+        )}
+        {step !== 1 && (
+          <button className="back" onClick={handleBack}>
+            Go Back
+          </button>
         )}
       </div>
     </div>
