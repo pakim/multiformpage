@@ -1,21 +1,25 @@
+import arcadeImage from "./assets/images/icon-arcade.svg"
+import advancedImage from "./assets/images/icon-advanced.svg"
+import proImage from "./assets/images/icon-pro.svg"
+
 export const plans = [
   {
     name: "Arcade",
     monthly: 9,
     yearly: 90,
-    image: "src/assets/images/icon-arcade.svg",
+    image: arcadeImage,
   },
   {
     name: "Advanced",
     monthly: 12,
     yearly: 120,
-    image: "src/assets/images/icon-advanced.svg",
+    image: advancedImage,
   },
   {
     name: "Arcade",
     monthly: 15,
     yearly: 150,
-    image: "src/assets/images/icon-pro.svg",
+    image: proImage,
   },
 ];
 
