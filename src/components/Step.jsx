@@ -6,7 +6,11 @@ const Step = ({ number, title, step, setStep, completed }) => {
   };
   return (
     <div className="step" onClick={handleClick}>
-      <div className={step === number ? "step-number active" : "step-number"}>
+      <div
+        className={
+          step === number || (step === 5 && number === 4) ? "step-number active" : "step-number"
+        }
+      >
         <span>{number}</span>
       </div>
       <div className="step-info">

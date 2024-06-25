@@ -121,7 +121,8 @@
             outline: none;
             cursor: pointer;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               border: 1px solid hsl(243, 100%, 62%);
             }
 
@@ -344,6 +345,95 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+
+          .user-container {
+            background-color: hsla(213, 96%, 18%, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .plan {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .left {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                .plan-name {
+                  font-weight: 500;
+                }
+
+                .change-link {
+                  font-size: 14px;
+                  text-decoration: underline;
+                  color: hsl(231, 11%, 63%);
+                  cursor: pointer;
+                }
+              }
+
+              .rate {
+                font-weight: 700;
+              }
+            }
+
+            hr {
+              border: 0.5px solid hsl(229, 24%, 87%);
+            }
+
+            .addon {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .name {
+                font-size: 14px;
+                color: hsl(231, 11%, 63%);
+              }
+
+              .rate {
+                font-size: 14px;
+                font-weight: 500;
+              }
+            }
+          }
+
+          .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 20px 0;
+
+            .name {
+              font-size: 14px;
+              color: hsl(231, 11%, 63%);
+            }
+
+            .total-price {
+              font-size: 20px;
+              font-weight: 700;
+              color: hsl(243, 100%, 62%);
+            }
+          }
+        }
+      }
+
+      &.confirm {
+        form {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          h1 {
+            margin-top: 30px;
+            margin-bottom: 20px;
+          }
         }
       }
 
@@ -403,8 +493,124 @@
           cursor: pointer;
         }
       }
+    }
+  }
+}
 
-      .confirm {
+@media screen and (max-width: 700px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    display: block;
+    position: relative;
+    background-color: hsl(217, 100%, 97%);
+
+    .sidebar {
+      background: url("./assets/images/bg-sidebar-mobile.svg") center / cover no-repeat;
+      width: 100%;
+      height: 150px;
+      border-radius: 0;
+      flex-direction: row;
+      padding: 0;
+      padding-top: 30px;
+      justify-content: center;
+      gap: 20px;
+
+      .step {
+        .step-info {
+          display: none;
+        }
+      }
+
+      .num-background {
+        transform: translateX(-81px);
+
+        &.two {
+          transform: translateX(-27px);
+        }
+
+        &.three {
+          transform: translateX(27px);
+        }
+
+        &.four {
+          transform: translateX(81px);
+        }
+      }
+    }
+
+    .forms {
+      padding: 30px 20px;
+      width: 350px;
+      height: 550px;
+      background-color: hsl(0, 0%, 100%);
+      position: absolute;
+      top: 90px;
+      left: calc(50vw - 175px);
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      box-shadow: 0 10px 15px -10px rgba(0, 0, 0, 0.2);
+
+      .form {
+        top: 30px;
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+
+        h1 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 17px;
+        }
+
+        &.plan {
+          form {
+            .plans {
+              flex-direction: column;
+              gap: 10px;
+              justify-content: flex-start;
+
+              .plan-container {
+                width: 100%;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 15px;
+                gap: 15px;
+                cursor: pointer;
+
+                img {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+
+        &.prev {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+
+        &.next {
+          opacity: 0;
+          transform: translateX(100%);
+        }
+      }
+
+      .button-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: hsl(0, 0%, 100%);
+        padding: 15px;
+
+        .buttons {
+        }
       }
     }
   }

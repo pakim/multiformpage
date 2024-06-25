@@ -6,6 +6,7 @@ import Plan from "./components/Plan";
 import Addon from "./components/Addon";
 import Summary from "./components/Summary";
 import { plans, addons } from "./data.jsx";
+import Confirm from "./components/Confirm.jsx";
 
 function App() {
   const [step, setStep] = useState(1);
@@ -75,7 +76,16 @@ function App() {
           included={included}
           setIncluded={setIncluded}
         />
-        <Summary step={step} setStep={setStep} />
+        <Summary
+          step={step}
+          setStep={setStep}
+          yearly={yearly}
+          plans={plans}
+          addons={addons}
+          plan={plan}
+          included={included}
+        />
+        <Confirm step={step} />
       </div>
     </div>
   );
